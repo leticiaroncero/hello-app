@@ -1,11 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hello App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    
+    <div>
+        <div class="header">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown" id="links">
+                    <ul class="nav nav-pills navbar-nav ml-auto">
+                        <span>Hello, </span>
+                        <!-- if LoggedIn -->
+                        <a href="#" id="nav-link">Logout</a>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <form>
+            <div class="form-group">
+                <label for="username">User Name</label>
+                <input type="text" class="form-control" id="username" aria-describedby="userName"
+                    placeholder="Enter username">
+                <small id="usernameHelp" class="form-text text-muted">Please enter your user name.</small>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary" id="login">Login</button>
+        </form>
+    </div>
 </body>
+<script src="script.js">
+
+</script>
+
+
 </html>
