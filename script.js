@@ -1,6 +1,14 @@
 $(document).ready(function () {
     $("#login").on("click", function (event) {
         event.preventDefault()
+        var username = $("#username").val().trim();
+        var password = $("#password").val().trim();
+        if (username.length < 1) {
+                $('#username').after('<div class="error"> Please enter your username </div>');
+             }
+             if (password.length < 1) {
+                $('#password').after('<span class="error"> Please enter a password </span>');
+             }
         // validateForm();
 
         var queryURL = "http://ip-api.com/json/"
@@ -21,9 +29,9 @@ $(document).ready(function () {
 
     })
 
-    function validateForm() {
-        var username = $("#username").val().trim();
-        var password = $("#password").val().trim();
+    // function validateForm() {
+    //     var username = $("#username").val().trim();
+    //     var password = $("#password").val().trim();
 
         // var inputVal = []
         // inputVal.push(username);
@@ -40,5 +48,5 @@ $(document).ready(function () {
         // if (username !== "" || password !== "") {
 
         // }
-    }
+    // }
 });
