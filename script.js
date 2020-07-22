@@ -4,9 +4,11 @@ $(document).ready(function () {
         var username = $("#username").val().trim();
         var password = $("#password").val().trim();
         if (username.length < 1) {
+                $('#username').addClass("error");
                 $('#username').after('<div class="error"> Please enter your username </div>');
              }
              if (password.length < 1) {
+                $('#password').addClass("error");
                 $('#password').after('<span class="error"> Please enter a password </span>');
              }
         // validateForm();
@@ -23,34 +25,22 @@ $(document).ready(function () {
                 method: "GET"
             }).then(function (res) {
                 var greeting = res.hello
-                $("#greeting").text(greeting).html("<span>").text(username + " you have successfully logged in!")
-                // $("<span>").text(username + " you have successfully logged in!");
-                console.log(username)
+                $("#greeting").text(greeting).html("<span>").text(username + " you have successfully logged in!");
+                var button = $('<button id="logout">Logout</button>');
+                $("#logoutBtn").append(button);
+                $("#logout").on("click", function (event) {
+                    var username = $("#username").val().trim();
+                    $("form")[0].reset();
+                    $("#greeting").html("<span>").text( "Have a great day " + username);
+                     
+                 });
+                
+                
             })
            
         });
        
 
     })
-
-    // function validateForm() {
-    //     var username = $("#username").val().trim();
-    //     var password = $("#password").val().trim();
-
-        // var inputVal = []
-        // inputVal.push(username);
-        // inputVal.push(password);
-
-        // if (inputVal[0] == "") {
-        //     $('#username').after('<div class="error"> Please enter your username </div>');
-        // }
-        // if (inputVal[1]) {
-        //     $('#password').after('<span class="error"> Please enter a password </span>');
-        // }
-
-
-        // if (username !== "" || password !== "") {
-
-        // }
-    // }
+    
 });
