@@ -23,9 +23,13 @@ $(document).ready(function () {
                 method: "GET"
             }).then(function (res) {
                 var greeting = res.hello
+                $("#greeting").text(greeting).html("<span>").text(username + " you have successfully logged in!")
+                // $("<span>").text(username + " you have successfully logged in!");
+                console.log(username)
             })
-
+           
         });
+       
 
     })
 
