@@ -1,6 +1,7 @@
 .error {
     color: red;
     margin-left: 5px;
+    border-color: red;
 }
 #greetingContainer {
     margin: 0 auto;

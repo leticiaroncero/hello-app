@@ -4,9 +4,11 @@ $(document).ready(function () {
         var username = $("#username").val().trim();
         var password = $("#password").val().trim();
         if (username.length < 1) {
+                $('#username').addClass("error");
                 $('#username').after('<div class="error"> Please enter your username </div>');
              }
              if (password.length < 1) {
+                $('#password').addClass("error");
                 $('#password').after('<span class="error"> Please enter a password </span>');
              }
         // validateForm();
