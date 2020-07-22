@@ -11,7 +11,7 @@ $(document).ready(function () {
                 $('#password').addClass("error");
                 $('#password').after('<span class="error"> Please enter a password </span>');
              }
-        // validateForm();
+       
 
         var queryURL = "http://ip-api.com/json/"
         $.ajax({

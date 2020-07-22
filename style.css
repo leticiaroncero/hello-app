@@ -6,3 +6,10 @@
 #greetingContainer {
     margin: 0 auto;
 }
+.navbar {
+    margin-bottom: 20px;
+}
+form { 
+    margin: 0 auto; 
+    width: 600px;
+    }
