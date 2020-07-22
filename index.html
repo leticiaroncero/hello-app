@@ -7,6 +7,7 @@
     <title>Hello App</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>
@@ -20,16 +21,19 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown" id="links">
-                    <ul class="nav nav-pills navbar-nav ml-auto">
-                        <span>Hello, </span>
+                    <ul class="nav nav-pills navbar-nav ml-auto" id="greetingContainer">
+                         <span id="greeting"></span>
                         <!-- if LoggedIn -->
+                        
+                    </ul>
+                    <ul>
                         <a href="#" id="nav-link">Logout</a>
                     </ul>
                 </div>
             </nav>
         </div>
 
-        <form>
+        <form >
             <div class="form-group">
                 <label for="username">User Name</label>
                 <input type="text" class="form-control" id="username" aria-describedby="userName"
