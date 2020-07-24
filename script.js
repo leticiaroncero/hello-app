@@ -6,13 +6,13 @@ $(document).ready(function () {
         if (username.length < 1) {
                 $('#username').addClass("error");
                 $('#username').after('<div class="error"> Please enter your username </div>');
-               
+             // stop it from appending error divs when clicking login twice  
         }
         if( password.length < 1) {
             $('#password').addClass("error");
             $('#password').after('<span class="error"> Please enter a password </span>');
         }
-        if (username.length > 1 && password.length >1) {
+        if (username.length > 1 && password.length >1 ) {
         var queryURL = "http://ip-api.com/json/"
         $.ajax({
             url: queryURL,
@@ -46,6 +46,15 @@ $(document).ready(function () {
     } 
 
     })
+     
+    $("#mySelect").change( function() {
+        
+        var langCode = $(this).val();
+
+         return langCode;
+    })
+
+    
     
     // $("#username").keyup(function() {
     //     $("#username").removeClass("error");
