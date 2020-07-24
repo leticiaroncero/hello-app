@@ -6,13 +6,13 @@ $(document).ready(function () {
         if (username.length < 1) {
                 $('#username').addClass("error");
                 $('#username').after('<div class="error"> Please enter your username </div>');
-             }
-             if (password.length < 1) {
-                $('#password').addClass("error");
-                $('#password').after('<span class="error"> Please enter a password </span>');
-             }
-       
-
+               
+        }
+        if( password.length < 1) {
+            $('#password').addClass("error");
+            $('#password').after('<span class="error"> Please enter a password </span>');
+        }
+        if (username.length > 1 && password.length >1) {
         var queryURL = "http://ip-api.com/json/"
         $.ajax({
             url: queryURL,
@@ -25,10 +25,11 @@ $(document).ready(function () {
                 method: "GET"
             }).then(function (res) {
                 var greeting = res.hello;
-                //var firstPiece = $("#greeting").text(greeting)
+            
                 $("#greeting").html("<span>").text(greeting + " " + username + " you have successfully logged in!");
                 var button = $('<button id="logout">Logout</button>');
-                $("#logoutBtn").append(button);
+                $("#logoutBtn").html(button);
+
                 $("#logout").on("click", function (event) {
                     var username = $("#username").val().trim();
                     $("form")[0].reset();
@@ -41,8 +42,17 @@ $(document).ready(function () {
             })
            
         });
-       
+    
+    } 
 
     })
     
+    // $("#username").keyup(function() {
+    //     $("#username").removeClass("error");
+        
+    // })
+    // $("#password").keyup(function() {
+    //     $("#password").removeClass("error");
+    // })
+
 });
