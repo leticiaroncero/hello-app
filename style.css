@@ -3,6 +3,11 @@
     margin-left: 5px;
     border-color: red;
 }
+
+ /* input .error {
+    color: black;
+} */
+
 #greetingContainer {
     margin: 0 auto;
 }
