@@ -20,7 +20,7 @@ $(document).ready(function () {
             $('#username').addClass("error");
             if (!hasUsername) { $('#username').after('<span class="error"> Please enter your username </span>') };
             hasUsername = true;
-            // stop it from appending error divs when clicking login twice  
+             
         }
         if (password.length < 1) {
             $('#password').addClass("error");
@@ -35,11 +35,21 @@ $(document).ready(function () {
                     url: queryURL + langCode,
                     method: "GET"
                 }).then(function (res) {
-                    var greeting = res.hello;
+                    var greeting = decodeURI(res.hello);
+                    console.log(res)
                     console.log(greeting)
                     $("#greeting").html("<span>").text(greeting + " " + username + " you have successfully logged in!");
                     var button = $('<button id="logout">Logout</button>');
                     $("#logoutBtn").html(button);
+
+                    $("#logout").on("click", function (event) {
+                        var username = $("#username").val().trim();
+                        $("form")[0].reset();
+                        $("input").removeClass('error')
+                        $("input").next("span").remove();
+                        $("#greeting").html("<span>").text("Have a great day " + username);
+            
+                    });
 
                 })
 
@@ -67,16 +77,18 @@ $(document).ready(function () {
                             $("input").removeClass('error')
                             $("input").next("span").remove();
                             $("#greeting").html("<span>").text("Have a great day " + username);
-
+                
                         });
-
-
+                        
                     })
 
                 });
             }
 
         }
+        
+
+
 
     })
 
