@@ -35,8 +35,9 @@ $(document).ready(function () {
                     url: queryURL + langCode,
                     method: "GET"
                 }).then(function (res) {
-                    var greeting = decodeURI(res.hello);
-                    console.log(res)
+                    
+                    var greeting = decodeURIComponent(res.hello);
+
                     console.log(greeting)
                     $("#greeting").html("<span>").text(greeting + " " + username + " you have successfully logged in!");
                     var button = $('<button id="logout">Logout</button>');
